@@ -19,7 +19,7 @@ Written for the Redragon Asura K501 USB Keyboard: [USB Backlit Gaming Keyboard (
     sudo dnf install kernel-devel kernel-headers
     sudo dnf groupinstall "Development Tools" "Development Libraries"
     
-    hg clone https://github.com/vipinmohan22/redragon-asura-kb-ubuntu.git
+    git clone https://github.com/vipinmohan22/redragon-asura-kb-ubuntu.git
     cd redragon-asura-kb-ubuntu
     sudo ./install.sh dkms
     
@@ -28,7 +28,7 @@ Written for the Redragon Asura K501 USB Keyboard: [USB Backlit Gaming Keyboard (
 ## Manual Install ##
 
     sudo apt-get install mercurial build-essential linux-headers-generic
-    hg clone https://github.com/vipinmohan22/redragon-asura-kb-ubuntu.git
+    git clone https://github.com/vipinmohan22/redragon-asura-kb-ubuntu.git
     cd redragon-asura-kb-ubuntu
     sudo ./install.sh
 
