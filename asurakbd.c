@@ -1,7 +1,7 @@
 /*
- *  Copyright (c) 2013 Colin Svingen
+ *  Copyright (c) 2018 Vipin Mohan
  *
- *  Azio L70 USB Keyboard support
+ *  Redragon Asura K501 USB Keyboard support
  */
 
 /*
@@ -20,7 +20,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
  * Should you need to contact me, the author, you can do so by email.
- * Mail your message to Colin Svingen <swoogan@hotmail.com>
+ * Mail your message to Vipin Mohan <vipinmohan22@outlook.com>
+ * Inspired by work of Colin Svingen <swoogan@hotmail.com> for Azio L70 Keyboard
  */
 
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
@@ -36,8 +37,8 @@
  * Version Information
  */
 #define DRIVER_VERSION ""
-#define DRIVER_AUTHOR "Colin Svingen <swoogan@hotmail.com>"
-#define DRIVER_DESC "Azio L70 Keyboard Driver"
+#define DRIVER_AUTHOR "Vipin Mohan <vipinmohan22@outlook.com"
+#define DRIVER_DESC "Redragon Asura k501 Keyboard Driver"
 #define DRIVER_LICENSE "GPL"
 #define ML_VENDOR_ID   0x0c45
 #define ML_PRODUCT_ID  0x760b
@@ -432,7 +433,7 @@ static int usb_kbd_probe(struct usb_interface *iface,
 			 le16_to_cpu(dev->descriptor.idVendor),
 			 le16_to_cpu(dev->descriptor.idProduct));
 
-	printk("<1>aziokbd: detected %s\n", kbd->name);
+	printk("<1>asurakbd: detected %s\n", kbd->name);
 
 	usb_make_path(dev, kbd->phys, sizeof(kbd->phys));
 	strlcat(kbd->phys, "/input0", sizeof(kbd->phys));
@@ -515,7 +516,7 @@ static struct usb_device_id usb_kbd_id_table[] = {
 MODULE_DEVICE_TABLE(usb, usb_kbd_id_table);
 
 static struct usb_driver usb_kbd_driver = {
-	.name =		"aziokbd",
+	.name =		"asurakbd",
 	.probe =	usb_kbd_probe,
 	.disconnect =	usb_kbd_disconnect,
 	.id_table =	usb_kbd_id_table,
